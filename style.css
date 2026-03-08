@@ -1,3 +1,8 @@
+html,body{
+overflow-x:hidden;
+max-width:100%;
+}
+
 html{
 scroll-behavior:smooth;
 }
@@ -6,7 +11,13 @@ scroll-behavior:smooth;
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, sans-serif;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
 }
 
 body{
@@ -22,6 +33,8 @@ align-items:center;
 padding:20px;
 background:#1e88e5;
 color:white;
+position:relative;
+z-index:10;
 }
 
 .nav-menu{
@@ -66,7 +79,8 @@ margin:4px;
 /* HERO */
 
 .hero{
-height:90vh;
+min-height:100vh;
+padding:120px 20px 60px;
 background:
 linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url('img/background-merah-putih-5.JPG');
@@ -96,6 +110,7 @@ color:white;
 padding:12px 25px;
 text-decoration:none;
 border-radius:5px;
+display:inline-block;
 }
 
 /* ABOUT */
@@ -112,25 +127,79 @@ margin-bottom:20px;
 color:#1e88e5;
 }
 
+
+/* LAYANAN */
+
+.layanan{
+padding:80px 20px;
+text-align:center;
+background:#ffffff;
+}
+
+.layanan h2{
+color:#1e88e5;
+margin-bottom:40px;
+}
+
+.layanan-slider{
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+}
+
+.layanan-track{
+display:flex;
+gap:20px;
+padding:10px;
+}
+
+.layanan-card{
+flex:0 0 260px;
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+scroll-snap-align:start;
+transition:0.3s;
+}
+
+.layanan-card:hover{
+transform:translateY(-5px);
+}
+
+.layanan-card h3{
+color:#1565c0;
+margin-bottom:10px;
+}
+
+.layanan-card p{
+font-size:14px;
+}
+
+
 /* TESTIMONI */
 
 .testimoni{
 padding:80px 20px;
 background:#f5f5f5;
 text-align:center;
+overflow:hidden;
 }
 
 .slider{
 overflow:hidden;
+width:100%;
+position:relative;
 }
 
 .slide-track{
 display:flex;
-animation:scroll 20s linear infinite;
+width:max-content;
+animation:scroll 25s linear infinite;
 }
 
 .card{
-min-width:300px;
+flex:0 0 auto;
+width:260px;
 margin:10px;
 }
 
@@ -139,9 +208,16 @@ width:100%;
 border-radius:10px;
 }
 
+/* slider animation */
+
 @keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
 }
 
 /* QUOTE */
@@ -179,7 +255,7 @@ text-align:center;
 padding:20px;
 }
 
-/* WA FLOAT */
+/* WHATSAPP FLOAT */
 
 .wa-float{
 position:fixed;
@@ -218,6 +294,7 @@ width:100%;
 flex-direction:column;
 text-align:center;
 transition:0.3s;
+padding:20px 0;
 }
 
 .nav-menu.active{
@@ -226,6 +303,58 @@ left:0;
 
 .hamburger{
 display:flex;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.navbar{
+padding:15px;
+}
+
+.card{
+width:220px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:100px 15px 40px;
+}
+
+.hero h1{
+font-size:24px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.card{
+width:180px;
+margin:8px;
+}
+
+.logo img{
+width:28px;
+height:28px;
+}
+
+.navbar{
+padding:12px 15px;
+}
+
+.wa-float{
+width:50px;
+height:50px;
+font-size:24px;
 }
 
 }
